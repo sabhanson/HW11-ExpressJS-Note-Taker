@@ -24,7 +24,7 @@ app.get('/api/notes', (req,res) => {
 })
 //POST route for api notes
 app.post('/api/notes', (req,res) => {
-    const {title, text} = req.body;
+    const { title, text} = req.body;
     //receive a new note and save in the reqbody
     //add to the dbjson file
     //return new note to the client
@@ -33,7 +33,7 @@ app.post('/api/notes', (req,res) => {
         const newNote = {
             title,
             text,
-            note_id: uuidv4(),
+            id: uuidv4(),
         }
         readAndAppend(newNote, './db/db.json');
         res.json('added new note!')
