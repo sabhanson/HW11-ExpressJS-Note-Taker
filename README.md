@@ -3,7 +3,6 @@
 ## Description
 I designed this Note Taking website for a user to create and save a list of notes. When they visit the site, they are able to add a note with a title and text body. They're able to access that note by clicking it on the left side. The user can easily delete a note by clicking on the red trash icon next to the particular note.
 
-----
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
@@ -12,7 +11,6 @@ I designed this Note Taking website for a user to create and save a list of note
 - [Tests](#tests)
 - [Questions](#questions)
 
----
 ## Installation
 
 ### For Note Taking Enthusiasts:
