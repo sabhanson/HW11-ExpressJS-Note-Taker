@@ -10,7 +10,6 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
 app.use(express.static('public'));
 
 
@@ -18,7 +17,6 @@ app.use(express.static('public'));
 app.get('/notes', (req,res) => 
     res.sendFile(path.join(__dirname, '/public/notes.html'))
 )
-
 
 //GET route for api notes
 app.get('/api/notes', (req,res) => {
@@ -28,9 +26,6 @@ app.get('/api/notes', (req,res) => {
 //POST route for api notes
 app.post('/api/notes', (req,res) => {
     const { title, text} = req.body;
-    //receive a new note and save in the reqbody
-    //add to the dbjson file
-    //return new note to the client
     console.log(req.body);
     if (req.body) {
         const newNote = {
@@ -41,24 +36,11 @@ app.post('/api/notes', (req,res) => {
         readAndAppend(newNote, './db/db.json');
         res.json('added new note!')
     } else {
-        res.error('you suck loser')
+        res.error('error, new note not added')
     }
 })
 
-//DELETE ROUTE
-
-//FIRST, access the array of objects from db.json (objArray = parsed db.json file)
-//THEN, bring that array into this file so it can be manipulated (new element to define the array?)
-//THEN, search through the array to find the specific object that matches the id of the selected note (filter method???)
-//THEN, remove that object from the array  (if req.body.id.value === element.id { filter.objArray ???}))
-//THEN, push that new array back to the db.json file with writeFile (this will rewrite over the previous data) writeFile ('/db/db.json)
-
-//event listener is on the delete icon on each note
-//when clicked, take that specific URL and delete the note (obj) from the db json
-//read file and look for the note that is linked to the specified ID
-//delete that object
-
-
+//DELETE route for api notes by id
 app.delete('/api/notes/:id', (req,res,) =>{
     fs.readFile('./db/db.json', 'utf8' , (err, data) => {
         const notesList = JSON.parse(data)
@@ -79,6 +61,8 @@ app.get('*', (req,res) =>
     res.sendFile(path.join(__dirname, '/public/index.html'))
 )
 
+//LISTEN to set up a localhost
 app.listen(PORT, () =>
-    console.log('App listening yo')
+    console.log(`App listening on http://localhost:${PORT}`)
+    
 )
