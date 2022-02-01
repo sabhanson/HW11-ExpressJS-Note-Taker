@@ -10,6 +10,7 @@ I designed this Note Taking website for a user to create and save a list of note
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
+- [Credits](#credits)
 
 ## Installation
 
@@ -77,3 +78,6 @@ Testing was all self-done in the terminal and console.
 ## Questions
 Contact me via 
 [Github ](https://www.github.com/sabhanson) or [email](mailto:sabhanson7@gmail.com)
+
+## Credits
+[Joe Rehfuss](http://https://github.com/Rufasa85) for this [helper code](https://github.com/sabhanson/HW11-ExpressJS-Note-Taker/blob/main/helpers/fsUtils.js)
